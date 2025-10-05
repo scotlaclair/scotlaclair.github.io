@@ -309,6 +309,7 @@ Consider adding workflows for:
 - [Workflow Syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 - [GitHub Actions Marketplace](https://github.com/marketplace?type=actions)
 - [Actions/Stale Documentation](https://github.com/actions/stale)
+- [Manual Testing Guide for Spark Automation](TESTING_SPARK_AUTOMATION.md) - Testing procedures
 
 ---
 
