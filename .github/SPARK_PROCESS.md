@@ -445,6 +445,164 @@ A: Anyone! Contributors, users, and community members are all encouraged to subm
 **Q: Do I need to implement my own spark?**
 A: No! You can submit ideas without implementing them. However, being willing to contribute to implementation increases the likelihood of acceptance.
 
+## Automation and Workflows
+
+### Automated Actions
+
+The Spark system includes several automated workflows to streamline the process:
+
+#### 1. Spark Automation (`spark-automation.yml`)
+
+**Triggers:** Issue opened, labeled, or edited with `spark` label
+
+**Actions:**
+- Automatically adds `stage-ideation` label if no stage label exists
+- Posts welcome comment on new spark submissions
+- Notifies when spark is promoted (labeled with `promoted` or `stage-development`)
+
+#### 2. Parent Issue Checklist Updates (`update-parent-checklist.yml`)
+
+**Triggers:** Pull request closed (merged)
+
+**Actions:**
+- Scans merged PR body for linked issues (Closes #X, Fixes #X, Resolves #X, Relates to #X)
+- Attempts to auto-check completed checklist items in parent issues
+- Posts confirmation comment when checklist is updated
+- Posts manual update instructions if no matching checklist item found
+
+**Matching Logic:**
+- Direct PR number reference in checklist item (e.g., "- [ ] Fix automation #123")
+- Keyword matching between PR title and checklist text (2+ significant words)
+
+#### 3. Issue Labeling (`label-issues.yml`)
+
+**Triggers:** Issue or PR opened/edited
+
+**Actions:**
+- Adds labels based on title keywords ([Spark], [Bug], [Feature], etc.)
+- Adds `triage` label to new issues without labels
+
+### Troubleshooting Automation
+
+#### Checklist Not Auto-Updating
+
+If a merged PR doesn't automatically update the parent issue checklist:
+
+**Common Causes:**
+1. PR body doesn't properly link to parent issue
+2. Checklist item text doesn't match PR title keywords
+3. Checklist item already checked
+
+**Manual Fallback:**
+1. Open the parent issue
+2. Click "Edit" on the issue description
+3. Change `- [ ]` to `- [x]` for completed items
+4. Save the changes
+
+**Best Practices for Auto-Updates:**
+- Link PRs clearly: "Closes #123" or "Relates to #456"
+- Include PR number in checklist items: "- [ ] Fix automation (PR #123)"
+- Use descriptive PR titles that match checklist wording
+- Check one item at a time to avoid conflicts
+
+#### Spark Not Getting Labels
+
+If a spark submission doesn't receive automatic labels:
+
+**Manual Fallback:**
+1. Go to the spark issue
+2. Click "Labels" in the right sidebar
+3. Add missing labels: `spark`, `triage`, `stage-ideation`
+4. Save changes
+
+#### Welcome Comment Not Appearing
+
+If a new spark doesn't receive the welcome comment:
+
+**Possible Causes:**
+- Workflow permissions issue
+- GitHub Actions temporarily unavailable
+
+**Manual Fallback:**
+- Post a manual welcome comment using the template from the workflow
+- Tag a maintainer to trigger manual triage
+
+### Edge Cases and Limitations
+
+#### Multiple PRs for One Checklist Item
+
+**Scenario:** A single checklist item requires multiple PRs to complete
+
+**Handling:**
+- The first merged PR will auto-check the item
+- Additional PRs should reference the parent but won't find an unchecked item
+- Consider breaking large tasks into smaller checklist items
+
+**Workaround:**
+- Use sub-tasks: "- [ ] Part 1 (PR #X)" and "- [ ] Part 2 (PR #Y)"
+
+#### Checklist Item Wording Doesn't Match PR
+
+**Scenario:** Checklist says "Implement feature X" but PR title is "Add new capability Y"
+
+**Handling:**
+- Automation won't match if keyword overlap is insufficient
+- Manual comment will note the PR was merged
+
+**Workaround:**
+- Include checklist item number in PR description
+- Use consistent terminology between checklist and PR titles
+- Manually update checklist after merge
+
+#### PR Closes Multiple Issues
+
+**Scenario:** One PR addresses tasks in multiple parent issues
+
+**Handling:**
+- Automation will attempt to update all linked issues
+- Each issue is processed independently
+
+**Best Practice:**
+- Use "Closes #123, Closes #456" format in PR body
+- Ensure each parent issue has clear checklist items
+
+#### Checklist in Comments vs. Description
+
+**Limitation:** Automation only updates checklists in issue **description**, not in comments
+
+**Workaround:**
+- Keep master checklist in issue description
+- Use comments for discussion or sub-task tracking
+
+### Manual Checklist Management
+
+When automation fails or doesn't apply, follow these steps:
+
+1. **Navigate to parent issue** - Find the issue tracking your work
+2. **Edit issue description** - Click the "..." menu and select "Edit"
+3. **Update checklist** - Change `- [ ]` to `- [x]` for completed items
+4. **Save changes** - Click "Update comment"
+5. **Add completion comment** - Post: "✅ Completed via PR #X"
+
+### Testing Automation
+
+To verify automation is working:
+
+1. **Create test issue** with checklist items
+2. **Create PR** that references the test issue
+3. **Merge PR** and wait 1-2 minutes
+4. **Check parent issue** for updated checklist and comment
+5. **Clean up** by closing test issues
+
+### Getting Help
+
+If automation consistently fails:
+
+1. Check [GitHub Actions status](https://www.githubstatus.com/)
+2. Review workflow runs in [Actions tab](../../actions)
+3. Report issues with automation in a new bug report
+4. Tag maintainers for assistance
+
 ## Resources
 
 - [Spark Issue Template](../../issues/new?template=spark.yml)
@@ -452,6 +610,7 @@ A: No! You can submit ideas without implementing them. However, being willing to
 - [Issue Labels](../labels.yml)
 - [GitHub Project Board](../../projects)
 - [Discussions](../../discussions)
+- [GitHub Actions Workflows](workflows/)
 
 ## Questions or Feedback?
 
