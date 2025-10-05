@@ -1,0 +1,47 @@
+name: 6. Contributor Experience
+description: Set up contributor guidelines and onboarding materials
+title: "[Contributor Experience]: "
+labels: ["contributor-experience", "documentation", "setup"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Contributor Experience Setup
+        
+        This template helps track tasks related to improving the contributor experience.
+
+  - type: checkboxes
+    id: contributor-tasks
+    attributes:
+      label: Contributor Experience Tasks
+      description: Tasks for setting up contributor resources
+      options:
+        - label: Add a comprehensive CONTRIBUTING guide
+        - label: Add a CODE_OF_CONDUCT
+        - label: Add a SECURITY policy
+        - label: Provide onboarding instructions for new collaborators
+        - label: Create contributor documentation
+        - label: Set up development environment documentation
+        - label: Document testing procedures
+        - label: Document code review process
+        - label: Create issue triage guidelines
+
+  - type: textarea
+    id: contribution-types
+    attributes:
+      label: Types of Contributions
+      description: What types of contributions are you looking for?
+      placeholder: Code, documentation, design, testing, etc.
+
+  - type: textarea
+    id: onboarding-needs
+    attributes:
+      label: Onboarding Requirements
+      description: What do new contributors need to know?
+      placeholder: Development setup, coding standards, review process, etc.
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any additional information about contributor experience

@@ -1,9 +1,12 @@
 # macOS
 .DS_Store
+.AppleDouble
+.LSOverride
 
 # Windows
 Thumbs.db
 Desktop.ini
+ehthumbs.db
 
 # Editor files
 .vscode/
@@ -11,7 +14,40 @@ Desktop.ini
 *.swp
 *.swo
 *~
+*.sublime-project
+*.sublime-workspace
 
 # Temporary files
 *.tmp
 *.bak
+*.log
+*~
+
+# Node modules (if Node.js tools are added)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts
+dist/
+build/
+.cache/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Test artifacts
+.pytest_cache/
+.coverage
+
+# Package manager lock files (keep these commented - uncomment if using these tools)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

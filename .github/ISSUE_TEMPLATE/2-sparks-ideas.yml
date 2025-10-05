@@ -1,0 +1,37 @@
+name: 2. Sparks (New Ideas)
+description: Set up the "Spark" system for capturing and managing new ideas
+title: "[Sparks]: "
+labels: ["spark", "process", "setup"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Sparks (New Ideas) Setup
+        
+        This template helps track tasks related to creating the Spark system for idea capture and management.
+
+  - type: checkboxes
+    id: spark-tasks
+    attributes:
+      label: Spark System Tasks
+      description: Tasks for implementing the Spark idea management system
+      options:
+        - label: Add an Issue template for "Spark" submissions
+        - label: Define a process for reviewing, triaging, and promoting sparks
+        - label: Automate spark labeling and initial triage
+        - label: Automate linking sparks to projects
+        - label: Decide on spark documentation method (issues, files, discussions, etc.)
+        - label: Create documentation explaining the Spark concept and workflow
+
+  - type: textarea
+    id: spark-process
+    attributes:
+      label: Spark Process Description
+      description: Describe your vision for the Spark process
+      placeholder: How should sparks flow from idea to implementation?
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any additional information about the Spark system

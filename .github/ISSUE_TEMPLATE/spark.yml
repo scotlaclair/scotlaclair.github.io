@@ -1,0 +1,75 @@
+name: 💡 Spark (New Idea)
+description: Submit a new spark - an idea or concept to explore
+title: "[Spark]: "
+labels: ["spark", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 💡 Spark Submission
+        
+        Use this template to capture a new idea, concept, or opportunity. Sparks are the seeds of innovation!
+
+  - type: textarea
+    id: spark-description
+    attributes:
+      label: Spark Description
+      description: Describe your idea or concept
+      placeholder: What's the core idea?
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-opportunity
+    attributes:
+      label: Problem or Opportunity
+      description: What problem does this solve or what opportunity does it create?
+      placeholder: Why is this idea valuable?
+
+  - type: textarea
+    id: potential-impact
+    attributes:
+      label: Potential Impact
+      description: What would be the impact if this idea were implemented?
+      placeholder: Who benefits and how?
+
+  - type: textarea
+    id: initial-thoughts
+    attributes:
+      label: Initial Thoughts on Implementation
+      description: Any early ideas on how this could be implemented?
+      placeholder: Don't worry about being detailed - just capture initial thoughts
+
+  - type: textarea
+    id: related-work
+    attributes:
+      label: Related Work or References
+      description: Links to related ideas, projects, or resources
+      placeholder: Any existing solutions, similar ideas, or relevant resources?
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level
+      description: How urgent or important is this idea?
+      options:
+        - Low - Nice to have
+        - Medium - Should consider soon
+        - High - Important opportunity
+        - Critical - Needs immediate attention
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: categories
+    attributes:
+      label: Categories
+      description: What areas does this spark relate to?
+      options:
+        - label: Documentation
+        - label: Process/Workflow
+        - label: Automation
+        - label: Feature/Enhancement
+        - label: Infrastructure
+        - label: User Experience
+        - label: Community/Collaboration

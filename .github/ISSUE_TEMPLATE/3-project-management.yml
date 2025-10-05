@@ -1,0 +1,50 @@
+name: 3. Project Management (Spark-Driven)
+description: Set up GitHub Projects and task management workflows
+title: "[Project Management]: "
+labels: ["project-management", "automation", "setup"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Project Management Setup
+        
+        This template helps track tasks related to setting up GitHub Projects and spark-driven project management.
+
+  - type: checkboxes
+    id: project-tasks
+    attributes:
+      label: Project Management Tasks
+      description: Tasks for setting up project boards and workflows
+      options:
+        - label: Set up a GitHub Project board (classic or Projects Beta)
+        - label: Configure board columns for SDLC stages (Idea, Design, Dev, Test, Review, Done)
+        - label: Automate project linking (new spark → new project or board entry)
+        - label: Set up task/sub-issue templates for SDLC phases
+        - label: Create documentation for project management workflow
+        - label: Define milestone usage and conventions
+
+  - type: dropdown
+    id: project-type
+    attributes:
+      label: Project Board Type
+      description: Which type of GitHub Projects should be used?
+      options:
+        - Projects (Beta/New)
+        - Projects Classic
+        - Both
+        - Not decided yet
+    validations:
+      required: true
+
+  - type: textarea
+    id: board-structure
+    attributes:
+      label: Board Structure
+      description: Describe the desired board columns and workflow
+      placeholder: e.g., Backlog → In Progress → In Review → Done
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any additional information about project management needs

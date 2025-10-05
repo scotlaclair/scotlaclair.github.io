@@ -1,0 +1,55 @@
+name: Stale Issues and PRs
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Run weekly on Sundays at midnight UTC
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          # General settings
+          days-before-stale: 60
+          days-before-close: 14
+          
+          # Issue settings
+          stale-issue-message: >
+            This issue has been automatically marked as stale because it has not had
+            recent activity. It will be closed if no further activity occurs within 14 days.
+            If this issue is still relevant, please add a comment to keep it open.
+            Thank you for your contributions!
+          close-issue-message: >
+            This issue has been automatically closed due to inactivity.
+            If you believe this issue is still relevant, please reopen it or create a new issue
+            with updated information. Thank you!
+          
+          # PR settings
+          stale-pr-message: >
+            This pull request has been automatically marked as stale because it has not had
+            recent activity. It will be closed if no further activity occurs within 14 days.
+            If you're still working on this, please add a comment or push new commits.
+            Thank you for your contributions!
+          close-pr-message: >
+            This pull request has been automatically closed due to inactivity.
+            If you'd like to continue this work, please reopen this PR or create a new one.
+            Thank you!
+          
+          # Labels
+          stale-issue-label: 'stale'
+          stale-pr-label: 'stale'
+          exempt-issue-labels: 'pinned,security,spark,in-progress,blocked'
+          exempt-pr-labels: 'pinned,security,in-progress,blocked'
+          
+          # Milestone and assignee exemptions
+          exempt-all-milestones: false
+          exempt-all-assignees: false
+          
+          # Operations per run (avoid rate limiting)
+          operations-per-run: 30

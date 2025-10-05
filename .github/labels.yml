@@ -1,0 +1,205 @@
+# Standard Labels for scotlaclair.github.io
+# This file defines all labels used in the repository
+# Labels can be synced using tools like https://github.com/marketplace/actions/github-labeler
+
+# Spark & Innovation
+- name: spark
+  color: "f9d0c4"
+  description: "💡 New ideas and concepts to explore"
+
+- name: triage
+  color: "fbca04"
+  description: "🔍 Needs review and categorization"
+
+# Issue Types
+- name: bug
+  color: "d73a4a"
+  description: "🐛 Something isn't working"
+
+- name: feature
+  color: "a2eeef"
+  description: "✨ New feature or request"
+
+- name: enhancement
+  color: "84b6eb"
+  description: "⬆️ Improvement to existing feature"
+
+- name: documentation
+  color: "0075ca"
+  description: "📚 Documentation improvements"
+
+# Repository Setup Areas (Items 1-7)
+- name: github-pages
+  color: "c5def5"
+  description: "📄 GitHub Pages configuration and content"
+
+- name: setup
+  color: "d4c5f9"
+  description: "⚙️ Repository configuration and setup"
+
+- name: automation
+  color: "5319e7"
+  description: "🤖 GitHub Actions and automation"
+
+- name: project-management
+  color: "d876e3"
+  description: "📊 Project boards and task management"
+
+- name: templates
+  color: "bfd4f2"
+  description: "📋 Issue/PR templates and labels"
+
+- name: contributor-experience
+  color: "0e8a16"
+  description: "👥 Contributing guides and community"
+
+- name: knowledge-base
+  color: "1d76db"
+  description: "📖 Knowledge base and SDLC documentation"
+
+# Status Labels
+- name: in-progress
+  color: "fef2c0"
+  description: "🔨 Currently being worked on"
+
+- name: blocked
+  color: "b60205"
+  description: "🚫 Blocked by another issue or external factor"
+
+- name: on-hold
+  color: "d4c5f9"
+  description: "⏸️ Paused - not actively being worked on"
+
+- name: needs-discussion
+  color: "d876e3"
+  description: "💬 Needs community discussion"
+
+- name: ready-for-review
+  color: "0e8a16"
+  description: "👀 Ready for review"
+
+# Priority Labels
+- name: priority-critical
+  color: "b60205"
+  description: "🔥 Critical priority - needs immediate attention"
+
+- name: priority-high
+  color: "d93f0b"
+  description: "⚠️ High priority"
+
+- name: priority-medium
+  color: "fbca04"
+  description: "📌 Medium priority"
+
+- name: priority-low
+  color: "0e8a16"
+  description: "🔽 Low priority"
+
+# Complexity Labels
+- name: complexity-high
+  color: "e99695"
+  description: "🧩 High complexity"
+
+- name: complexity-medium
+  color: "f9d0c4"
+  description: "🔧 Medium complexity"
+
+- name: complexity-low
+  color: "c2e0c6"
+  description: "🪶 Low complexity"
+
+# Help Labels
+- name: good-first-issue
+  color: "7057ff"
+  description: "👋 Good for newcomers"
+
+- name: help-wanted
+  color: "008672"
+  description: "🙏 Extra attention is needed"
+
+# Workflow Labels
+- name: needs-testing
+  color: "f9d0c4"
+  description: "🧪 Needs testing"
+
+- name: needs-feedback
+  color: "d876e3"
+  description: "💭 Needs feedback from maintainers or community"
+
+- name: duplicate
+  color: "cfd3d7"
+  description: "📑 This issue or PR already exists"
+
+- name: wontfix
+  color: "ffffff"
+  description: "🚫 This will not be worked on"
+
+- name: invalid
+  color: "e4e669"
+  description: "❌ This doesn't seem right"
+
+# SDLC Stage Labels
+- name: stage-ideation
+  color: "fef2c0"
+  description: "💭 Ideation stage"
+
+- name: stage-design
+  color: "bfdadc"
+  description: "🎨 Design stage"
+
+- name: stage-development
+  color: "1d76db"
+  description: "💻 Development stage"
+
+- name: stage-testing
+  color: "c2e0c6"
+  description: "🧪 Testing stage"
+
+- name: stage-review
+  color: "fbca04"
+  description: "👀 Review stage"
+
+- name: stage-deployment
+  color: "0e8a16"
+  description: "🚀 Deployment stage"
+
+- name: stage-maintenance
+  color: "d4c5f9"
+  description: "🔧 Maintenance stage"
+
+# Special Labels
+- name: breaking-change
+  color: "d73a4a"
+  description: "💥 Breaking change - requires major version bump"
+
+- name: security
+  color: "ee0701"
+  description: "🔒 Security-related issue"
+
+- name: dependencies
+  color: "0366d6"
+  description: "📦 Dependency updates"
+
+- name: infrastructure
+  color: "bfd4f2"
+  description: "🏗️ Infrastructure and deployment"
+
+- name: performance
+  color: "1d76db"
+  description: "⚡ Performance improvement"
+
+- name: accessibility
+  color: "5319e7"
+  description: "♿ Accessibility improvement"
+
+- name: design
+  color: "d876e3"
+  description: "🎨 Design and UI/UX"
+
+- name: refactoring
+  color: "fbca04"
+  description: "♻️ Code refactoring"
+
+- name: testing
+  color: "c2e0c6"
+  description: "🧪 Testing improvements"
