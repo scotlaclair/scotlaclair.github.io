@@ -29,7 +29,15 @@ jobs:
             // Supports: Closes #123, Fixes #456, Resolves #789, Relates to #101
             const issueReferences = [];
             const patterns = [
-              /(?:Close[sd]?|Fix(?:e[sd])?|Resolve[sd]?)\s+#(\d+)/gi,
+              /Closes\s+#(\d+)/gi,
+              /Closed\s+#(\d+)/gi,
+              /Close\s+#(\d+)/gi,
+              /Fixes\s+#(\d+)/gi,
+              /Fixed\s+#(\d+)/gi,
+              /Fix\s+#(\d+)/gi,
+              /Resolves\s+#(\d+)/gi,
+              /Resolved\s+#(\d+)/gi,
+              /Resolve\s+#(\d+)/gi,
               /(?:Relates?\s+to|Part\s+of)\s+#(\d+)/gi
             ];
             
