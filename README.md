@@ -5,9 +5,12 @@ Repo for Pages and Documents, new sparks
 ## 🚀 Quick Links
 
 - 🌐 **Live Site**: https://scotlaclair.github.io/
+- 📖 **Knowledge Base**: https://scotlaclair.github.io/docs/
+- 📚 **Wiki**: [Project Wiki](../../wiki)
+- 💬 **Discussions**: [Join the Conversation](../../discussions)
 - 💡 **Submit a Spark**: [New Idea](../../issues/new?template=spark.yml)
 - 🐛 **Report a Bug**: [Bug Report](../../issues/new?template=bug.yml)
-- 📚 **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md)
+- 📝 **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md)
 - ⚙️ **Setup Guide**: See [.github/SETUP_GUIDE.md](.github/SETUP_GUIDE.md)
 
 ## How GitHub Pages Works
@@ -88,6 +91,9 @@ This repository includes comprehensive configuration for:
 - ✅ **Security Policy** - Vulnerability reporting process
 - ✅ **GitHub Actions** - Automated workflows for Pages, labeling, and maintenance
 - ✅ **Labels** - Comprehensive label system for organization
+- ✅ **Wiki Structure** - Guide for setting up and organizing the Wiki
+- ✅ **Discussion Templates** - Templates for community discussions
+- ✅ **Knowledge Base** - Documentation hub at /docs/
 
 ### Creating Sub-Issues
 
@@ -98,6 +104,29 @@ To create sub-issues for the repository setup (items 1-7), use the issue templat
 3. Fill out the form and submit
 
 See [.github/SETUP_GUIDE.md](.github/SETUP_GUIDE.md) for detailed instructions.
+
+## Community Resources
+
+### 📖 Documentation & Knowledge Base
+
+- **[Knowledge Base](https://scotlaclair.github.io/docs/)** - Comprehensive documentation hub
+- **[Wiki](../../wiki)** - Collaborative documentation and guides
+  - See [Wiki Guide](.github/WIKI_GUIDE.md) for setup instructions
+- **[Setup Guide](.github/SETUP_GUIDE.md)** - Repository configuration guide
+
+### 💬 Discussions & Community
+
+- **[Discussions](../../discussions)** - Community conversations and Q&A
+  - See [Discussions Guide](.github/DISCUSSIONS_GUIDE.md) for how to use
+  - Templates available for Ideas, Questions, and Show & Tell
+- **[Issues](../../issues)** - Bug reports, features, and sparks
+- **[Pull Requests](../../pulls)** - Code contributions and reviews
+
+### 📋 Templates Available
+
+- **Issue Templates:** Spark, Feature, Bug, Documentation, and 7 setup area templates
+- **Discussion Templates:** Ideas, Questions, Show & Tell
+- **PR Template:** Standardized pull request submissions
 
 ## Contributing
 

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Scot LaClair</title>
+    <meta name="description" content="Documentation and knowledge base for scotlaclair.github.io">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header {
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 0.3em;
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            padding-bottom: 0.3em;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        h3 {
+            font-size: 1.3em;
+            color: #34495e;
+            margin-top: 1.2em;
+            margin-bottom: 0.5em;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 1em;
+        }
+        
+        li {
+            margin-bottom: 0.5em;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .section {
+            margin-bottom: 2em;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .emoji {
+            margin-right: 8px;
+        }
+        
+        footer {
+            margin-top: 3em;
+            padding-top: 2em;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #95a5a6;
+            font-size: 0.9em;
+        }
+        
+        .nav-links {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 2em;
+        }
+        
+        .nav-links a {
+            display: inline-block;
+            margin-right: 15px;
+            padding: 5px 10px;
+            background: white;
+            border-radius: 4px;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Knowledge Base</h1>
+            <p class="tagline">Documentation and resources for scotlaclair.github.io</p>
+        </header>
+        
+        <div class="nav-links">
+            <a href="/">← Home</a>
+            <a href="#getting-started">Getting Started</a>
+            <a href="#contributing">Contributing</a>
+            <a href="#resources">Resources</a>
+        </div>
+        
+        <div class="section" id="getting-started">
+            <h2>🚀 Getting Started</h2>
+            
+            <div class="card">
+                <h3><span class="emoji">📖</span>Documentation</h3>
+                <ul>
+                    <li><a href="https://github.com/scotlaclair/scotlaclair.github.io/blob/main/README.md">README</a> - Project overview and setup instructions</li>
+                    <li><a href="https://github.com/scotlaclair/scotlaclair.github.io/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> - How to contribute to the project</li>
+                    <li><a href="https://github.com/scotlaclair/scotlaclair.github.io/blob/main/CODE_OF_CONDUCT.md">CODE_OF_CONDUCT</a> - Community guidelines</li>
+                    <li><a href="https://github.com/scotlaclair/scotlaclair.github.io/blob/main/SECURITY.md">SECURITY</a> - Security policy and reporting</li>
+                    <li><a href="https://github.com/scotlaclair/scotlaclair.github.io/blob/main/.github/SETUP_GUIDE.md">SETUP_GUIDE</a> - Repository setup and configuration</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">🌐</span>GitHub Pages</h3>
+                <p>This repository is configured as a GitHub Pages site serving content from the root directory.</p>
+                <ul>
+                    <li><strong>Live Site:</strong> <a href="https://scotlaclair.github.io/">https://scotlaclair.github.io/</a></li>
+                    <li><strong>Source:</strong> Main branch, root directory</li>
+                    <li><strong>Deployment:</strong> Automatic via GitHub Actions on push to main</li>
+                    <li><strong>Processing:</strong> Plain HTML (Jekyll disabled via <code>.nojekyll</code>)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section" id="contributing">
+            <h2>🤝 Contributing</h2>
+            
+            <div class="card">
+                <h3><span class="emoji">💡</span>The Spark Process</h3>
+                <p>Submit new ideas and concepts through our Spark system:</p>
+                <ol>
+                    <li><strong>Submit a Spark</strong> - Use the <a href="https://github.com/scotlaclair/scotlaclair.github.io/issues/new?template=spark.yml">Spark template</a></li>
+                    <li><strong>Triage</strong> - Sparks are reviewed and categorized</li>
+                    <li><strong>Discussion</strong> - Community discusses viability and approach</li>
+                    <li><strong>Promotion</strong> - Approved sparks become features</li>
+                    <li><strong>Implementation</strong> - Work begins through issues and PRs</li>
+                </ol>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">🔧</span>How to Contribute</h3>
+                <ul>
+                    <li><strong>💡 Sparks</strong> - <a href="https://github.com/scotlaclair/scotlaclair.github.io/issues/new?template=spark.yml">Submit new ideas</a></li>
+                    <li><strong>🐛 Bug Reports</strong> - <a href="https://github.com/scotlaclair/scotlaclair.github.io/issues/new?template=bug.yml">Report issues</a></li>
+                    <li><strong>✨ Feature Requests</strong> - <a href="https://github.com/scotlaclair/scotlaclair.github.io/issues/new?template=feature.yml">Request features</a></li>
+                    <li><strong>📚 Documentation</strong> - <a href="https://github.com/scotlaclair/scotlaclair.github.io/issues/new?template=documentation.yml">Improve docs</a></li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">💬</span>Community</h3>
+                <ul>
+                    <li><strong>Discussions</strong> - <a href="https://github.com/scotlaclair/scotlaclair.github.io/discussions">Join conversations</a></li>
+                    <li><strong>Wiki</strong> - <a href="https://github.com/scotlaclair/scotlaclair.github.io/wiki">Explore the Wiki</a></li>
+                    <li><strong>Issues</strong> - <a href="https://github.com/scotlaclair/scotlaclair.github.io/issues">View open issues</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section" id="resources">
+            <h2>📦 Resources</h2>
+            
+            <div class="card">
+                <h3><span class="emoji">🏗️</span>Repository Structure</h3>
+                <ul>
+                    <li><code>index.html</code> - Homepage (served at root)</li>
+                    <li><code>docs/</code> - Documentation and additional pages</li>
+                    <li><code>.github/</code> - GitHub-specific configuration
+                        <ul>
+                            <li><code>workflows/</code> - GitHub Actions workflows</li>
+                            <li><code>ISSUE_TEMPLATE/</code> - Issue templates</li>
+                        </ul>
+                    </li>
+                    <li><code>.nojekyll</code> - Disables Jekyll processing</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">🔄</span>Workflows</h3>
+                <ul>
+                    <li><strong>Pages Deployment</strong> - Automatically deploys to GitHub Pages</li>
+                    <li><strong>Auto-Labeling</strong> - Labels issues based on content</li>
+                    <li><strong>Stale Management</strong> - Manages inactive issues and PRs</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">🏷️</span>Labels & Organization</h3>
+                <p>Issues are organized using labels for:</p>
+                <ul>
+                    <li>Types: <code>spark</code>, <code>feature</code>, <code>bug</code>, <code>documentation</code></li>
+                    <li>Status: <code>triage</code>, <code>in-progress</code>, <code>blocked</code></li>
+                    <li>Priority: <code>priority-high</code>, <code>priority-medium</code>, <code>priority-low</code></li>
+                    <li>SDLC Stages: <code>stage-ideation</code>, <code>stage-development</code>, etc.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🔗 Quick Links</h2>
+            <ul>
+                <li>🌐 <a href="https://scotlaclair.github.io/">Live Site</a></li>
+                <li>📂 <a href="https://github.com/scotlaclair/scotlaclair.github.io">GitHub Repository</a></li>
+                <li>📖 <a href="https://github.com/scotlaclair/scotlaclair.github.io/wiki">Wiki</a></li>
+                <li>💬 <a href="https://github.com/scotlaclair/scotlaclair.github.io/discussions">Discussions</a></li>
+                <li>🐛 <a href="https://github.com/scotlaclair/scotlaclair.github.io/issues">Issues</a></li>
+                <li>📋 <a href="https://github.com/scotlaclair/scotlaclair.github.io/pulls">Pull Requests</a></li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>📄 <a href="/docs/example.html">View Example Page</a> | <a href="/">Back to Home</a></p>
+            <p>&copy; 2024 Scot LaClair</p>
+        </footer>
+    </div>
+</body>
+</html>

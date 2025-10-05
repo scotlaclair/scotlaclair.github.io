@@ -1,0 +1,41 @@
+labels: [discussion, ideas]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 💡 Share Your Idea
+        
+        Use this space to share ideas, concepts, or opportunities that you'd like to discuss with the community.
+        
+        **Note:** For fully-formed ideas ready for implementation, consider using a [Spark](../issues/new?template=spark.yml) instead.
+
+  - type: textarea
+    id: idea-description
+    attributes:
+      label: Idea Description
+      description: Describe your idea in detail
+      placeholder: What is your idea? What problem does it solve or opportunity does it address?
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this idea important or valuable?
+      placeholder: What motivated this idea? What benefits would it bring?
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or References
+      description: Are there similar implementations or inspirations you can share?
+      placeholder: Links, examples, or references that help explain your idea
+
+  - type: textarea
+    id: considerations
+    attributes:
+      label: Considerations
+      description: What challenges or questions should we think about?
+      placeholder: Potential challenges, questions, or trade-offs to consider

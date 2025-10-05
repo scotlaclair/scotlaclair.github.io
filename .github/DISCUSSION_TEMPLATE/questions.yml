@@ -1,0 +1,32 @@
+labels: [discussion, question]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ❓ Ask a Question
+        
+        Use this space to ask questions about the project, how things work, or get help from the community.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: What would you like to know?
+      placeholder: Ask your question here...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any additional information that might help answer your question
+      placeholder: What have you tried? What are you trying to accomplish?
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Related Documentation
+      description: Have you checked any documentation or previous discussions?
+      placeholder: Links to docs, discussions, or issues you've already reviewed
