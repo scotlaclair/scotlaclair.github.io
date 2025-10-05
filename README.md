@@ -144,4 +144,7 @@ We welcome contributions! Please see:
 - A concept to explore
 - An opportunity to consider
 
-[Submit a Spark →](../../issues/new?template=spark.yml)
+**Learn More:**
+- 📖 [Spark Process Documentation](.github/SPARK_PROCESS.md) - Complete guide
+- 🔄 [Spark Workflow](.github/SPARK_WORKFLOW.md) - Visual diagrams
+- 💡 [Submit a Spark →](../../issues/new?template=spark.yml)
