@@ -1,0 +1,50 @@
+name: 7. Knowledge Base & SDLC Documentation
+description: Set up knowledge base and document SDLC processes
+title: "[Knowledge Base & SDLC]: "
+labels: ["knowledge-base", "sdlc", "documentation", "setup"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Knowledge Base & SDLC Documentation Setup
+        
+        This template helps track tasks related to knowledge base and SDLC documentation.
+
+  - type: checkboxes
+    id: kb-tasks
+    attributes:
+      label: Knowledge Base & SDLC Tasks
+      description: Tasks for setting up knowledge base and SDLC documentation
+      options:
+        - label: Document the full SDLC automation process
+        - label: Create flow diagrams for the SDLC process
+        - label: Maintain a summary of completed sparks and projects
+        - label: Set up Wiki structure and navigation
+        - label: Create architecture documentation
+        - label: Document design decisions and rationale
+        - label: Set up Dependabot configuration
+        - label: Configure CodeQL security scanning
+        - label: Set up Markdown linting
+        - label: Create glossary of terms and concepts
+
+  - type: textarea
+    id: kb-structure
+    attributes:
+      label: Knowledge Base Structure
+      description: Describe the desired structure for the knowledge base
+      placeholder: |
+        How should documentation be organized?
+        docs/, Wiki, Discussions, or a combination?
+
+  - type: textarea
+    id: sdlc-phases
+    attributes:
+      label: SDLC Phases
+      description: List the SDLC phases that should be documented
+      placeholder: e.g., Ideation → Design → Development → Testing → Review → Deployment → Maintenance
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any additional information about knowledge base and SDLC needs

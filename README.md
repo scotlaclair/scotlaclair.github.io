@@ -2,6 +2,14 @@
 
 Repo for Pages and Documents, new sparks
 
+## 🚀 Quick Links
+
+- 🌐 **Live Site**: https://scotlaclair.github.io/
+- 💡 **Submit a Spark**: [New Idea](../../issues/new?template=spark.yml)
+- 🐛 **Report a Bug**: [Bug Report](../../issues/new?template=bug.yml)
+- 📚 **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md)
+- ⚙️ **Setup Guide**: See [.github/SETUP_GUIDE.md](.github/SETUP_GUIDE.md)
+
 ## How GitHub Pages Works
 
 This repository uses **GitHub Pages** to host a static website at https://scotlaclair.github.io/
@@ -68,3 +76,43 @@ scotlaclair.github.io/
 - Homepage: `https://scotlaclair.github.io/` (index.html)
 - Example page: `https://scotlaclair.github.io/docs/example.html`
 - Any file: `https://scotlaclair.github.io/path/to/file.html`
+
+## Repository Setup
+
+This repository includes comprehensive configuration for:
+
+- ✅ **Issue Templates** - For Sparks, features, bugs, documentation, and the 7 setup areas
+- ✅ **Pull Request Template** - Standardized PR submissions
+- ✅ **Contributing Guide** - Guidelines for contributors
+- ✅ **Code of Conduct** - Community guidelines
+- ✅ **Security Policy** - Vulnerability reporting process
+- ✅ **GitHub Actions** - Automated workflows for Pages, labeling, and maintenance
+- ✅ **Labels** - Comprehensive label system for organization
+
+### Creating Sub-Issues
+
+To create sub-issues for the repository setup (items 1-7), use the issue templates:
+
+1. Go to [Issues → New Issue](../../issues/new/choose)
+2. Select the appropriate template (1-7 for setup areas)
+3. Fill out the form and submit
+
+See [.github/SETUP_GUIDE.md](.github/SETUP_GUIDE.md) for detailed instructions.
+
+## Contributing
+
+We welcome contributions! Please see:
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) - How to contribute
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) - Community guidelines
+- [SECURITY.md](SECURITY.md) - Security policy
+
+## The Spark Process
+
+💡 **Sparks** are new ideas and concepts to explore. Submit a spark when you have:
+
+- A new idea to discuss
+- A concept to explore
+- An opportunity to consider
+
+[Submit a Spark →](../../issues/new?template=spark.yml)

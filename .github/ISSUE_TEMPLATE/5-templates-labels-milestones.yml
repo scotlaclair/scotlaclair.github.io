@@ -1,0 +1,50 @@
+name: 5. Templates, Labels, Milestones
+description: Set up issue/PR templates, labels, and milestone conventions
+title: "[Templates & Labels]: "
+labels: ["templates", "labels", "setup"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Templates, Labels, and Milestones Setup
+        
+        This template helps track tasks related to standardizing templates, labels, and milestones.
+
+  - type: checkboxes
+    id: template-tasks
+    attributes:
+      label: Template and Label Tasks
+      description: Tasks for setting up templates and labels
+      options:
+        - label: Add Issue template for features
+        - label: Add Issue template for bugs
+        - label: Add Issue template for documentation
+        - label: Add Issue template for tests
+        - label: Add Pull Request template(s)
+        - label: Define and create standard labels
+        - label: Establish label conventions and color coding
+        - label: Set up milestone naming and usage conventions
+        - label: Create or document branching strategy
+        - label: Document template usage guidelines
+
+  - type: textarea
+    id: label-list
+    attributes:
+      label: Proposed Labels
+      description: List the labels that should be created
+      placeholder: |
+        spark, triage, in-progress, design, test, docs, done, 
+        feature, bug, enhancement, question, help-wanted, etc.
+
+  - type: textarea
+    id: branching-strategy
+    attributes:
+      label: Branching Strategy
+      description: Describe the desired branching strategy
+      placeholder: e.g., main, feature/*, bugfix/*, hotfix/*
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any additional information about templates and labels

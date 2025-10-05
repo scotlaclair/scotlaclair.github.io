@@ -1,0 +1,39 @@
+name: 1. GitHub Pages & Documentation
+description: Configure and enhance GitHub Pages with documentation support
+title: "[Pages & Docs]: "
+labels: ["documentation", "github-pages", "setup"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## GitHub Pages & Documentation Setup
+        
+        This template helps track tasks related to configuring GitHub Pages and setting up comprehensive documentation.
+
+  - type: checkboxes
+    id: pages-tasks
+    attributes:
+      label: GitHub Pages Configuration
+      description: Tasks for setting up GitHub Pages
+      options:
+        - label: Configure GitHub Pages to serve from `/` or `/docs` with `index.html`
+        - label: Enable and structure the Wiki
+        - label: Add README with comprehensive project information
+        - label: Add CONTRIBUTING guide for contributors
+        - label: Add CODE_OF_CONDUCT for community guidelines
+        - label: Set up a Knowledge Base (docs/ folder, Wiki, or Discussions)
+        - label: Provide guidance/templates for using Discussions and Spaces
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any additional information or requirements for this setup
+      placeholder: Any specific documentation needs or preferences?
+
+  - type: textarea
+    id: related-issues
+    attributes:
+      label: Related Issues
+      description: Link to any related issues or PRs
+      placeholder: "#123, #456"

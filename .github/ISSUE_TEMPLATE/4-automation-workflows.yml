@@ -1,0 +1,47 @@
+name: 4. Automation & Workflows
+description: Set up GitHub Actions and automation workflows
+title: "[Automation]: "
+labels: ["automation", "github-actions", "setup"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Automation & Workflows Setup
+        
+        This template helps track tasks related to GitHub Actions and automation.
+
+  - type: checkboxes
+    id: automation-tasks
+    attributes:
+      label: Automation Tasks
+      description: Tasks for implementing GitHub Actions and automation
+      options:
+        - label: Add GitHub Pages deployment workflow
+        - label: Add auto-labeling workflow for issues and PRs
+        - label: Add triage automation for new issues
+        - label: Add spark-to-project conversion automation
+        - label: Add documentation generation/validation workflow
+        - label: Add stale issue/PR cleanup workflow
+        - label: Document how to extend workflows for new needs
+        - label: Set up CodeQL security scanning
+        - label: Set up Dependabot for dependency updates
+
+  - type: textarea
+    id: workflow-requirements
+    attributes:
+      label: Workflow Requirements
+      description: Describe specific workflow requirements or automations needed
+      placeholder: What processes should be automated?
+
+  - type: textarea
+    id: triggers
+    attributes:
+      label: Automation Triggers
+      description: What events should trigger automations?
+      placeholder: e.g., issue creation, PR open, label changes, etc.
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any additional information about automation needs
