@@ -93,19 +93,25 @@ Templates for creating sub-issues corresponding to the 7 main setup areas:
 
 ---
 
-### 🔄 GitHub Actions Workflows (3)
+### 🔄 GitHub Actions Workflows (4)
 
-1. ✅ **Pages Deployment** (`pages.yml`)
+1. ✅ **Spark Automation** (`spark-automation.yml`)
+   - **Trigger**: Spark issues opened, labeled, edited
+   - **Purpose**: Automate spark lifecycle management
+   - **Features**: Welcome comments, stage labeling, promotion notifications
+   - **Status**: Ready to use
+
+2. ✅ **Pages Deployment** (`pages.yml`)
    - **Trigger**: Push to main, manual
    - **Purpose**: Auto-deploy site to GitHub Pages
    - **Status**: Ready to use
 
-2. ✅ **Auto-Labeling** (`label-issues.yml`)
+3. ✅ **Auto-Labeling** (`label-issues.yml`)
    - **Trigger**: Issue/PR opened or edited
    - **Purpose**: Automatically add labels based on title
    - **Features**: Smart label detection, triage labeling
 
-3. ✅ **Stale Management** (`stale.yml`)
+4. ✅ **Stale Management** (`stale.yml`)
    - **Trigger**: Weekly schedule, manual
    - **Purpose**: Manage inactive issues/PRs
    - **Settings**: 60 days stale, 14 days close
@@ -113,11 +119,11 @@ Templates for creating sub-issues corresponding to the 7 main setup areas:
 
 ---
 
-### 📚 Documentation Files (7)
+### 📚 Documentation Files (9)
 
-1. ✅ **CONTRIBUTING.md** (7,434 characters)
+1. ✅ **CONTRIBUTING.md** (Updated)
    - Comprehensive contribution guide
-   - Spark process explanation
+   - Spark process explanation with links to detailed docs
    - Development workflow
    - Style guidelines
    - PR process
@@ -140,19 +146,34 @@ Templates for creating sub-issues corresponding to the 7 main setup areas:
    - Workflow recommendations
    - Label system explanation
 
-5. ✅ **WORKFLOWS.md** (7,407 characters)
+5. ✅ **WORKFLOWS.md** (Updated)
    - Detailed workflow documentation
+   - Spark automation workflow
    - Usage instructions
    - Troubleshooting
    - Best practices
 
-6. ✅ **README.md** (Updated)
+6. ✅ **SPARK_PROCESS.md** (13,708 characters)
+   - Complete spark process documentation
+   - Submission, triage, and promotion guidelines
+   - Maintainer responsibilities
+   - Best practices and examples
+   - FAQ and templates
+
+7. ✅ **SPARK_WORKFLOW.md** (18,724 characters)
+   - Visual workflow diagrams
+   - Phase-by-phase breakdown
+   - State diagrams and timelines
+   - Metrics and examples
+   - Complete lifecycle guide
+
+8. ✅ **README.md** (Updated)
    - Quick links section
    - Setup documentation
-   - Spark process overview
+   - Spark process overview with links
    - Contributing information
 
-7. ✅ **PULL_REQUEST_TEMPLATE.md** (1,807 characters)
+9. ✅ **PULL_REQUEST_TEMPLATE.md** (1,807 characters)
    - Standardized PR format
    - Change type selection
    - Testing checklist

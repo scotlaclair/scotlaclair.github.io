@@ -39,10 +39,11 @@ This project and everyone participating in it is governed by our [Code of Conduc
 This repository uses a "Spark" system for managing ideas and innovation:
 
 1. **Submit a Spark** - Use the Spark issue template to propose new ideas
-2. **Triage** - Sparks are reviewed and categorized
+2. **Triage** - Sparks are reviewed and categorized (within 5 business days)
 3. **Discussion** - Community discusses the spark's viability and approach
-4. **Promotion** - Approved sparks become features or projects
-5. **Implementation** - Work begins through issues and pull requests
+4. **Decision** - Spark is approved, needs more info, or closed
+5. **Promotion** - Approved sparks become features or projects
+6. **Implementation** - Work begins through issues and pull requests
 
 ### When to Use a Spark
 
@@ -57,6 +58,13 @@ This repository uses a "Spark" system for managing ideas and innovation:
 - **Feature Request** - For well-defined features ready for implementation
 - **Documentation** - For documentation improvements
 - **Setup Issues** - For repository configuration tasks (items 1-7)
+
+### Detailed Spark Documentation
+
+For comprehensive information about the Spark process, see:
+- 📖 [Spark Process Documentation](.github/SPARK_PROCESS.md) - Detailed guide on submitting, reviewing, and promoting sparks
+- 🔄 [Spark Workflow Guide](.github/SPARK_WORKFLOW.md) - Visual workflow diagrams and examples
+- 💡 [Submit a Spark](../../issues/new?template=spark.yml) - Start the process!
 
 ## How to Contribute
 

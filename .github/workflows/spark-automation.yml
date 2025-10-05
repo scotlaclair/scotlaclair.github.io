@@ -1,0 +1,98 @@
+name: Spark Automation
+
+on:
+  issues:
+    types: [opened, labeled, edited]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  manage-spark:
+    runs-on: ubuntu-latest
+    # Only run for issues with the 'spark' label
+    if: contains(github.event.issue.labels.*.name, 'spark')
+    
+    steps:
+      - name: Check spark labels and status
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const labels = issue.labels.map(l => l.name);
+            
+            console.log(`Processing spark issue #${issue.number}`);
+            console.log(`Current labels: ${labels.join(', ')}`);
+            
+            // Add stage-ideation label if not present and no other stage label exists
+            const stageLabels = labels.filter(l => l.startsWith('stage-'));
+            if (stageLabels.length === 0) {
+              console.log('Adding stage-ideation label');
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                labels: ['stage-ideation']
+              });
+            }
+            
+      - name: Comment on new spark
+        uses: actions/github-script@v7
+        if: github.event.action == 'opened'
+        with:
+          script: |
+            const issue = context.payload.issue;
+            
+            const comment = `## 🎉 Thank you for submitting a spark!
+            
+            Your spark has been received and will be reviewed by maintainers within 5 business days.
+            
+            **What happens next:**
+            1. **Triage** - Maintainers will review and categorize your spark
+            2. **Discussion** - The community will discuss and refine the idea
+            3. **Decision** - The spark will be approved, needs more info, or closed
+            4. **Promotion** - Approved sparks become features or projects
+            
+            **How you can help:**
+            - Respond to questions and feedback
+            - Engage in the discussion
+            - Provide additional context if needed
+            - Be open to iteration and refinement
+            
+            Learn more about the spark process: [Spark Process Documentation](../.github/SPARK_PROCESS.md)
+            
+            ---
+            *This is an automated message. A maintainer will follow up soon.*`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body: comment
+            });
+            
+      - name: Notify on spark promotion
+        uses: actions/github-script@v7
+        if: |
+          github.event.action == 'labeled' && 
+          (github.event.label.name == 'promoted' || 
+           github.event.label.name == 'stage-development')
+        with:
+          script: |
+            const issue = context.payload.issue;
+            
+            const comment = `## 🚀 Spark Promoted!
+            
+            This spark has progressed to the next stage! 
+            
+            The idea has been validated and is moving forward. Check the issue description and comments for details about next steps.
+            
+            Thank you for your contribution to the project!`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body: comment
+            });

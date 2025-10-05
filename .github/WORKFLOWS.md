@@ -4,7 +4,48 @@ This document describes the automated workflows configured in this repository.
 
 ## Active Workflows
 
-### 1. Deploy to GitHub Pages (`pages.yml`)
+### 1. Spark Automation (`spark-automation.yml`)
+
+**Purpose**: Automates the spark submission and lifecycle management process
+
+**Triggers**:
+- Issue opened with `spark` label
+- Issue labeled (when `spark` label is added)
+- Issue edited
+
+**What it does**:
+1. Adds `stage-ideation` label to new sparks
+2. Posts welcome comment on new spark submissions
+3. Notifies when sparks are promoted
+4. Provides next steps and guidance
+
+**Permissions**:
+- `issues: write` - Add labels and comments
+- `contents: read` - Read repository content
+
+**Automated Actions**:
+
+*On Spark Submission:*
+- Adds `stage-ideation` label if no stage label exists
+- Posts welcome comment with:
+  - What happens next
+  - How to engage effectively
+  - Link to spark process documentation
+
+*On Spark Promotion:*
+- Detects when `promoted` or `stage-development` label is added
+- Posts congratulatory comment
+- Acknowledges the contributor
+
+**Benefits**:
+- Consistent onboarding for spark submitters
+- Clear expectations and next steps
+- Reduced manual work for maintainers
+- Better contributor experience
+
+---
+
+### 2. Deploy to GitHub Pages (`pages.yml`)
 
 **Purpose**: Automatically deploys the site to GitHub Pages
 
@@ -42,7 +83,7 @@ gh workflow run pages.yml
 
 ---
 
-### 2. Label Issues and PRs (`label-issues.yml`)
+### 3. Label Issues and PRs (`label-issues.yml`)
 
 **Purpose**: Automatically adds labels to issues and PRs based on their title
 
@@ -81,7 +122,7 @@ Analyzes the issue/PR title and adds appropriate labels:
 
 ---
 
-### 3. Stale Issues and PRs (`stale.yml`)
+### 4. Stale Issues and PRs (`stale.yml`)
 
 **Purpose**: Automatically manages inactive issues and pull requests
 
