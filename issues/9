@@ -1,0 +1,71 @@
+### Spark System Tasks
+
+- [ ] Add an Issue template for "Spark" submissions
+- [ ] Define a process for reviewing, triaging, and promoting sparks
+- [ ] Automate spark labeling and initial triage
+- [ ] Automate linking sparks to projects
+- [ ] Decide on spark documentation method (issues, files, discussions, etc.)
+- [ ] Create documentation explaining the Spark concept and workflow
+
+### Spark Process Description
+
+This sub-issue addresses actionable feedback from the merged PR #8 (Complete Spark System Implementation: Process Documentation, Automation, and Workflow Management). Specifically, it focuses on reviewing the full implementation of the Spark system, ensuring all checklist tasks in the parent issue are completed and verifiable, and improving automation so that when PRs close, corresponding checklist items are automatically marked as done. Tasks include auditing the automation, updating checklists, and refining workflow triggers to ensure accurate progress tracking.
+
+**Additional Implementation Details:**
+- Review and update all relevant GitHub Actions for Spark workflow and checklist management.
+- Ensure all multi-line comment templates in workflow scripts use consistent indentation for readability and maintainability. For example:
+
+**Before:**
+```js
+const comment = `## 🎉 Thank you for submitting a spark!
+            
+            Your spark has been received and will be reviewed by maintainers within 5 business days.
+            
+            **What happens next:**
+            1. **Triage** - Maintainers will review and categorize your spark
+            2. **Discussion** - The community will discuss and refine the idea
+            3. **Decision** - The spark will be approved, needs more info, or closed
+            4. **Promotion** - Approved sparks become features or projects
+            
+            **How you can help:**
+            - Respond to questions and feedback
+            - Engage in the discussion
+            - Provide additional context if needed
+            - Be open to iteration and refinement
+            
+            Learn more about the spark process: [Spark Process Documentation](https://github.com/scotlaclair/scotlaclair.github.io/blob/main/.github/SPARK_PROCESS.md)
+            
+            ---
+            *This is an automated message. A maintainer will follow up soon.*`;
+```
+
+**After:**
+```js
+const comment = `## 🎉 Thank you for submitting a spark!
+
+Your spark has been received and will be reviewed by maintainers within 5 business days.
+
+**What happens next:**
+1. **Triage** - Maintainers will review and categorize your spark
+2. **Discussion** - The community will discuss and refine the idea
+3. **Decision** - The spark will be approved, needs more info, or closed
+4. **Promotion** - Approved sparks become features or projects
+
+**How you can help:**
+- Respond to questions and feedback
+- Engage in the discussion
+- Provide additional context if needed
+- Be open to iteration and refinement
+
+Learn more about the spark process: [Spark Process Documentation](https://github.com/scotlaclair/scotlaclair.github.io/blob/main/.github/SPARK_PROCESS.md)
+
+---
+*This is an automated message. A maintainer will follow up soon.*`;
+```
+- Apply similar fixes to all multi-line workflow comment templates, including the "Spark Promoted!" notification.
+- Confirm checklist automation is working by testing with PRs and reviewing parent issue state.
+- Document any additional edge cases or manual steps required for Spark process completion tracking.
+
+### Additional Context
+
+PR #8 fulfilled all Spark System requirements but revealed a gap: checklists in parent issues are not auto-updating when PRs close. This sub-issue will design and implement workflow improvements so that merged PRs can check off linked issue checklist tasks. Also includes a review of all Spark-related automation and documentation to ensure completeness and traceability. In addition, ensure all workflow scripts output readable and consistently indented comments, and that the documentation includes troubleshooting or manual fallback steps if automation fails.
