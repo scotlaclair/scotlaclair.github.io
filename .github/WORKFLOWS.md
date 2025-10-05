@@ -45,7 +45,64 @@ This document describes the automated workflows configured in this repository.
 
 ---
 
-### 2. Deploy to GitHub Pages (`pages.yml`)
+### 2. Update Parent Issue Checklist (`update-parent-checklist.yml`)
+
+**Purpose**: Automatically updates checklist items in parent issues when related PRs are merged
+
+**Triggers**:
+- Pull request closed (only if merged)
+
+**What it does**:
+1. Scans merged PR body for linked issue references
+2. Finds checklists in parent issues
+3. Matches PR to checklist items by PR number or keywords
+4. Updates checklist items from `- [ ]` to `- [x]`
+5. Posts confirmation comment with PR reference
+
+**Supported Linking Keywords**:
+- `Closes #123` or `Close #123` or `Closed #123`
+- `Fixes #123` or `Fix #123` or `Fixed #123`
+- `Resolves #123` or `Resolve #123` or `Resolved #123`
+- `Relates to #123` or `Related to #123`
+- `Part of #123`
+
+**Matching Logic**:
+1. **Direct PR number reference**: If checklist item contains `#PR_NUMBER`, it's matched
+2. **Keyword matching**: If checklist item and PR title share 2+ significant words (>3 chars)
+
+**Automated Actions**:
+
+*When Match Found:*
+- Checks off the matching checklist item
+- Posts: "✅ Checklist item completed via PR #X"
+
+*When No Match Found:*
+- Posts manual update instructions
+- Notes that PR was merged but requires manual checklist update
+- Provides instructions on how to manually check items
+
+**Permissions**:
+- `issues: write` - Update issue descriptions and add comments
+- `pull-requests: read` - Read PR information
+- `contents: read` - Read repository content
+
+**Best Practices**:
+- Include PR number in checklist items: `- [ ] Fix bug (PR #123)`
+- Use descriptive PR titles that match checklist wording
+- Link PRs clearly in body: "Closes #X" or "Part of #X"
+- One checklist item per PR for best accuracy
+
+**Limitations**:
+- Only updates checklists in issue **descriptions**, not comments
+- Keyword matching may miss items with very different wording
+- Updates may take 1-2 minutes to appear after merge
+
+**Testing**:
+See [Testing Spark Automation](.github/TESTING_SPARK_AUTOMATION.md) for comprehensive testing instructions.
+
+---
+
+### 3. Deploy to GitHub Pages (`pages.yml`)
 
 **Purpose**: Automatically deploys the site to GitHub Pages
 
@@ -83,7 +140,7 @@ gh workflow run pages.yml
 
 ---
 
-### 3. Label Issues and PRs (`label-issues.yml`)
+### 4. Label Issues and PRs (`label-issues.yml`)
 
 **Purpose**: Automatically adds labels to issues and PRs based on their title
 
@@ -122,7 +179,7 @@ Analyzes the issue/PR title and adds appropriate labels:
 
 ---
 
-### 4. Stale Issues and PRs (`stale.yml`)
+### 5. Stale Issues and PRs (`stale.yml`)
 
 **Purpose**: Automatically manages inactive issues and pull requests
 
@@ -276,6 +333,20 @@ gh run view [RUN_ID]
 2. Increase `days-before-stale` in `stale.yml`
 3. Add more labels to `exempt-issue-labels`
 
+### Checklist Not Auto-Updating
+
+**Common issues**:
+- PR body doesn't link to parent issue correctly
+- Checklist item wording doesn't match PR title
+- Checklist is in a comment instead of issue description
+
+**Solution**:
+1. Use proper linking keywords: "Closes #X" or "Part of #X"
+2. Include PR number in checklist items: `- [ ] Task (PR #X)`
+3. Ensure checklist is in issue description, not comments
+4. Check [Testing Guide](TESTING_SPARK_AUTOMATION.md) for detailed testing steps
+5. If automation fails, manually update checklist items
+
 ---
 
 ## Workflow Metrics
@@ -309,6 +380,8 @@ Consider adding workflows for:
 - [Workflow Syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 - [GitHub Actions Marketplace](https://github.com/marketplace?type=actions)
 - [Actions/Stale Documentation](https://github.com/actions/stale)
+- [Testing Spark Automation](TESTING_SPARK_AUTOMATION.md) - Guide for testing workflows
+- [Spark Process Documentation](SPARK_PROCESS.md) - Complete Spark system guide
 
 ---
 
