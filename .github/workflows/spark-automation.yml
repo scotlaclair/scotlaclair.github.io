@@ -60,7 +60,7 @@ jobs:
             - Provide additional context if needed
             - Be open to iteration and refinement
             
-            Learn more about the spark process: [Spark Process Documentation](../.github/SPARK_PROCESS.md)
+            Learn more about the spark process: [Spark Process Documentation](https://github.com/scotlaclair/scotlaclair.github.io/blob/main/.github/SPARK_PROCESS.md)
             
             ---
             *This is an automated message. A maintainer will follow up soon.*`;
