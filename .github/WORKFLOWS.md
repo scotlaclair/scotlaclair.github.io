@@ -382,6 +382,7 @@ Consider adding workflows for:
 - [Actions/Stale Documentation](https://github.com/actions/stale)
 - [Testing Spark Automation](TESTING_SPARK_AUTOMATION.md) - Guide for testing workflows
 - [Spark Process Documentation](SPARK_PROCESS.md) - Complete Spark system guide
+- [Manual Testing Guide for Spark Automation](TESTING_SPARK_AUTOMATION.md) - Testing procedures
 
 ---
 
