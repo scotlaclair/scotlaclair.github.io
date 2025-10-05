@@ -4,31 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Example Page - Scot LaClair</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <h1>Example Document</h1>
-    <p>This is an example of how to structure additional pages in your GitHub Pages site.</p>
-    <p>You can organize your content in folders like this <code>docs/</code> directory.</p>
-    <p><a href="/">← Back to Home</a></p>
+    <div class="container">
+        <header>
+            <h1>Example Document</h1>
+            <p class="tagline">A sample page demonstrating the site structure</p>
+        </header>
+        
+        <div class="section">
+            <p>This is an example of how to structure additional pages in your GitHub Pages site.</p>
+            <p>You can organize your content in folders like this <code>docs/</code> directory.</p>
+            
+            <div class="card">
+                <h3>💡 Tips for Creating Pages</h3>
+                <ul>
+                    <li>Use semantic HTML5 elements</li>
+                    <li>Link to the shared CSS file: <code>/assets/css/style.css</code></li>
+                    <li>Organize content in logical sections</li>
+                    <li>Maintain consistent navigation</li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <p><a href="/">← Back to Home</a> | <a href="/docs/">Documentation</a></p>
+        </footer>
+    </div>
 </body>
 </html>

@@ -1,0 +1,41 @@
+# GitHub Discussions Category Configuration
+# This file documents the recommended category structure for GitHub Discussions
+# Categories must be configured through the GitHub UI at:
+# https://github.com/scotlaclair/scotlaclair.github.io/discussions
+
+# Recommended Categories:
+
+categories:
+  - name: "📢 Announcements"
+    description: "Updates and news from maintainers"
+    format: "announcement"
+    
+  - name: "💡 Ideas"
+    description: "Share and discuss new ideas"
+    format: "discussion"
+    template: ".github/DISCUSSION_TEMPLATE/ideas.yml"
+    
+  - name: "❓ Q&A"
+    description: "Ask questions and get help from the community"
+    format: "question"
+    template: ".github/DISCUSSION_TEMPLATE/questions.yml"
+    
+  - name: "🎉 Show and Tell"
+    description: "Share what you've built or discovered"
+    format: "discussion"
+    template: ".github/DISCUSSION_TEMPLATE/show-and-tell.yml"
+    
+  - name: "💬 General"
+    description: "General conversation and community chat"
+    format: "discussion"
+    
+  - name: "🗳️ Polls"
+    description: "Community polls and voting"
+    format: "poll"
+
+# Instructions:
+# 1. Enable Discussions in repository Settings > Features
+# 2. Go to Discussions tab and click Categories
+# 3. Create categories based on the structure above
+# 4. Set templates by referencing the template files in .github/DISCUSSION_TEMPLATE/
+# 5. See .github/DISCUSSIONS_GUIDE.md for detailed setup instructions

@@ -1,0 +1,39 @@
+labels: [discussion, show-and-tell]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎉 Show and Tell
+        
+        Share something you've built, discovered, or accomplished related to this project!
+
+  - type: textarea
+    id: showcase
+    attributes:
+      label: What are you sharing?
+      description: Tell us about what you've created or discovered
+      placeholder: Describe what you're sharing and why it's interesting
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Provide more information about your work
+      placeholder: How did you build it? What technologies did you use? What challenges did you face?
+
+  - type: textarea
+    id: links
+    attributes:
+      label: Links and Resources
+      description: Share relevant links (demos, repos, screenshots, etc.)
+      placeholder: Links to your work, demos, repositories, or images
+
+  - type: textarea
+    id: learnings
+    attributes:
+      label: Key Learnings
+      description: What did you learn from this experience?
+      placeholder: Share insights, tips, or lessons learned
