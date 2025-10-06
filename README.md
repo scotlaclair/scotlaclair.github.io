@@ -12,6 +12,7 @@ Repo for Pages and Documents, new sparks
 - 🐛 **Report a Bug**: [Bug Report](../../issues/new?template=bug.yml)
 - 📝 **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md)
 - ⚙️ **Setup Guide**: See [.github/SETUP_GUIDE.md](.github/SETUP_GUIDE.md)
+- 🔗 **PR Linking Guide**: See [.github/PR_ISSUE_LINKING_REFERENCE.md](.github/PR_ISSUE_LINKING_REFERENCE.md)
 
 ## How GitHub Pages Works
 
@@ -103,7 +104,7 @@ To create sub-issues for the repository setup (items 1-7), use the issue templat
 2. Select the appropriate template (1-7 for setup areas)
 3. Fill out the form and submit
 
-See [.github/SETUP_GUIDE.md](.github/SETUP_GUIDE.md) for detailed instructions.
+See [.github/SETUP_GUIDE.md](.github/SETUP_GUIDE.md) for detailed instructions and [.github/SUB_ISSUE_MANAGEMENT.md](.github/SUB_ISSUE_MANAGEMENT.md) for best practices on managing parent and sub-issues.
 
 ## Community Resources
 

@@ -16,9 +16,18 @@
 
 ## Related Issues
 
-<!-- Link to related issues using keywords like "Closes #123" or "Relates to #456" -->
+<!-- 
+Link to related issues using appropriate keywords:
+- "Closes #123" - Use when your PR FULLY COMPLETES the issue
+- "Part of #123" - Use when your PR is PART OF a larger issue
+- "Relates to #123" - Use for related work that doesn't complete the issue
+
+IMPORTANT: Never use "Closes" for parent issues with sub-tasks!
+See: .github/SUB_ISSUE_MANAGEMENT.md for full guidance
+-->
 
 Closes #
+Part of #
 Relates to #
 
 ## Changes Made

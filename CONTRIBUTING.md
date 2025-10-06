@@ -13,6 +13,12 @@ Thank you for your interest in contributing! This document provides guidelines a
 - [Pull Request Process](#pull-request-process)
 - [Style Guidelines](#style-guidelines)
 
+## Quick References
+
+- 📖 [Sub-Issue Management Guide](.github/SUB_ISSUE_MANAGEMENT.md) - Comprehensive guide on parent/sub-issues
+- 🔗 [PR Linking Quick Reference](.github/PR_ISSUE_LINKING_REFERENCE.md) - Fast lookup for linking PRs
+- 📋 [Issue #11 Example](.github/ISSUE_11_BREAKDOWN.md) - Real example of sub-issue management
+
 ## Code of Conduct
 
 This project and everyone participating in it is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
@@ -144,6 +150,29 @@ We use labels to organize and prioritize work:
 - `in-progress` - Currently being worked on
 - `blocked` - Waiting on something else
 
+### Working with Parent and Sub-Issues
+
+When working on large features or initiatives, we use a parent-child issue structure:
+
+**Parent Issues** contain:
+- High-level description of the work
+- Checklist of major tasks
+- Links to sub-issues
+- Overall acceptance criteria
+
+**Sub-Issues** contain:
+- Specific, actionable work items
+- Reference to parent using `Part of #[parent]`
+- Independent acceptance criteria
+
+**Important Guidelines:**
+- ❌ Never use `Closes #[parent]` in PRs for parent issues
+- ✅ Use `Part of #[parent]` to link PRs to parent issues
+- ✅ Use `Closes #[sub-issue]` to complete specific sub-issues
+- ✅ Parent issues should only be closed manually once all sub-issues are complete
+
+See [Sub-Issue Management Guide](.github/SUB_ISSUE_MANAGEMENT.md) for complete details and examples.
+
 ## Pull Request Process
 
 ### Before Submitting
@@ -165,7 +194,11 @@ We use labels to organize and prioritize work:
    ```
 2. **Create a Pull Request** from your fork to the main repository
 3. **Fill out the PR template** completely
-4. **Link related issues** using keywords like "Closes #123"
+4. **Link related issues** using appropriate keywords:
+   - Use `Closes #123` when your PR **fully completes** an issue
+   - Use `Part of #123` when your PR is **part of a larger issue**
+   - Use `Relates to #123` for **related but not completing** work
+   - See [Sub-Issue Management Guide](.github/SUB_ISSUE_MANAGEMENT.md) for details
 5. **Request review** from maintainers
 
 ### PR Requirements
