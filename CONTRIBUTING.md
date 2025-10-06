@@ -13,6 +13,12 @@ Thank you for your interest in contributing! This document provides guidelines a
 - [Pull Request Process](#pull-request-process)
 - [Style Guidelines](#style-guidelines)
 
+## Quick References
+
+- 📖 [Sub-Issue Management Guide](.github/SUB_ISSUE_MANAGEMENT.md) - Comprehensive guide on parent/sub-issues
+- 🔗 [PR Linking Quick Reference](.github/PR_ISSUE_LINKING_REFERENCE.md) - Fast lookup for linking PRs
+- 📋 [Issue #11 Example](.github/ISSUE_11_BREAKDOWN.md) - Real example of sub-issue management
+
 ## Code of Conduct
 
 This project and everyone participating in it is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.

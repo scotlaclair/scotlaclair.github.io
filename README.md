@@ -12,6 +12,7 @@ Repo for Pages and Documents, new sparks
 - 🐛 **Report a Bug**: [Bug Report](../../issues/new?template=bug.yml)
 - 📝 **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md)
 - ⚙️ **Setup Guide**: See [.github/SETUP_GUIDE.md](.github/SETUP_GUIDE.md)
+- 🔗 **PR Linking Guide**: See [.github/PR_ISSUE_LINKING_REFERENCE.md](.github/PR_ISSUE_LINKING_REFERENCE.md)
 
 ## How GitHub Pages Works
 
