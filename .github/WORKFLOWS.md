@@ -310,6 +310,7 @@ Consider adding workflows for:
 - [GitHub Actions Marketplace](https://github.com/marketplace?type=actions)
 - [Actions/Stale Documentation](https://github.com/actions/stale)
 - [Manual Testing Guide for Spark Automation](TESTING_SPARK_AUTOMATION.md) - Testing procedures
+- [Sub-Issue Management Guide](SUB_ISSUE_MANAGEMENT.md) - Best practices for linking PRs to parent and sub-issues
 
 ---
 

@@ -78,6 +78,8 @@ If a parent sub-issue has many tasks, you can create additional child issues:
 2. Reference the parent using `Part of #[parent-issue-number]`
 3. Use the same labels as the parent for consistency
 
+**Important:** When linking PRs to parent issues, use `Part of #[parent]` instead of `Closes #[parent]` to avoid prematurely closing the parent issue. See [Sub-Issue Management Guide](SUB_ISSUE_MANAGEMENT.md) for complete details.
+
 ### Step 3: Track in Project Board
 
 1. Add all issues to your GitHub Project board
