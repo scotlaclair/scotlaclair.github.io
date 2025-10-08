@@ -64,7 +64,7 @@ scotlaclair.github.io/
 📋 **Optional Additions:**
 - `404.html` - Custom error page for broken links
 - `assets/` folder - For images, CSS, and JavaScript files
-- `CNAME` - For custom domain (if you have one)
+- `CNAME` - For custom domain (if you have one) - See [.github/CNAME_SETUP.md](.github/CNAME_SETUP.md)
 - `robots.txt` - To control search engine indexing
 - `sitemap.xml` - To help search engines find your pages
 
