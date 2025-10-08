@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://scotlaclair.github.io/</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Documentation Index -->
+  <url>
+    <loc>https://scotlaclair.github.io/docs/</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Example Page -->
+  <url>
+    <loc>https://scotlaclair.github.io/docs/example.html</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- 
+  ==========================================
+  Instructions for maintaining this sitemap:
+  ==========================================
+  
+  1. Add new pages as <url> entries with the following structure:
+  
+  <url>
+    <loc>https://scotlaclair.github.io/path/to/page.html</loc>
+    <lastmod>YYYY-MM-DD</lastmod>
+    <changefreq>frequency</changefreq>
+    <priority>0.0-1.0</priority>
+  </url>
+  
+  2. Update <lastmod> dates when pages are modified (format: YYYY-MM-DD)
+  
+  3. Set <changefreq> appropriately:
+     - always  : Documents that change each time they are accessed
+     - hourly  : Frequently updated content
+     - daily   : Content updated daily
+     - weekly  : Content updated weekly
+     - monthly : Content updated monthly
+     - yearly  : Rarely updated content
+     - never   : Archived content
+  
+  4. Set <priority> based on importance (0.0 to 1.0):
+     - 1.0 : Homepage and most important pages
+     - 0.8 : Major section landing pages
+     - 0.5 : Regular content pages
+     - 0.3 : Less important pages
+  
+  5. Update robots.txt to reference this sitemap:
+     Sitemap: https://scotlaclair.github.io/sitemap.xml
+  
+  6. Submit sitemap to search engines:
+     - Google Search Console: https://search.google.com/search-console
+     - Bing Webmaster Tools: https://www.bing.com/webmasters
+  
+  7. Consider using a sitemap generator tool for large sites:
+     - https://www.xml-sitemaps.com/
+     - https://github.com/jekyll/jekyll-sitemap (if using Jekyll)
+  
+  ==========================================
+  -->
+  
+</urlset>
