@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Scot LaClair</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 2rem;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-shadow: 0 0 20px var(--glow-color);
+            margin: 2rem 0;
+        }
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+        }
+        .suggestions {
+            margin-top: 2rem;
+        }
+        .suggestions ul {
+            list-style: none;
+            padding: 0;
+        }
+        .suggestions li {
+            margin: 0.5rem 0;
+        }
+        .suggestions a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+        .suggestions a:hover {
+            color: var(--primary-dark);
+            text-shadow: 0 0 10px var(--glow-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-message">Page Not Found</h1>
+        <p class="tagline">The page you're looking for doesn't exist or has been moved.</p>
+        
+        <div class="suggestions">
+            <h2>Try these instead:</h2>
+            <ul>
+                <li><a href="/">← Go to Homepage</a></li>
+                <li><a href="/docs/">📖 Browse Documentation</a></li>
+                <li><a href="https://github.com/scotlaclair/scotlaclair.github.io">💻 View Repository</a></li>
+                <li><a href="https://github.com/scotlaclair/scotlaclair.github.io/issues/new/choose">🐛 Report an Issue</a></li>
+            </ul>
+        </div>
+        
+        <footer style="margin-top: 3rem;">
+            &copy; 2024 Scot LaClair
+        </footer>
+    </div>
+</body>
+</html>

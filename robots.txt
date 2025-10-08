@@ -1,0 +1,36 @@
+# robots.txt for scotlaclair.github.io
+# This file controls how search engines crawl and index your site
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Sitemap location (uncomment and update when sitemap.xml is added)
+# Sitemap: https://scotlaclair.github.io/sitemap.xml
+
+# ==========================================
+# Optional: Disallow specific paths
+# ==========================================
+# Uncomment the lines below to prevent search engines from indexing specific areas:
+
+# Disallow: /private/
+# Disallow: /temp/
+# Disallow: /assets/
+# Disallow: *.json
+
+# ==========================================
+# Crawl-delay (optional)
+# ==========================================
+# Some search engines respect crawl-delay to avoid overloading your site
+# Uncomment to set a delay (in seconds) between requests:
+
+# Crawl-delay: 10
+
+# ==========================================
+# Notes:
+# ==========================================
+# - User-agent: * applies to all search engines
+# - Allow: / permits crawling of all pages
+# - Disallow: /path/ blocks crawling of specific directories
+# - This file should be placed in the root of your site
+# - Changes may take time to be recognized by search engines
