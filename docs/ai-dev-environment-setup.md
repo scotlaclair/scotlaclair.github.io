@@ -26,7 +26,7 @@ This guide outlines recommended steps to prepare a GitHub repository for collabo
 - Configure `.github/pull_request_template.md` to require testing evidence and AI usage notes.
 - Define a label taxonomy in `.github/labels.yml` (if using `github-label-sync`) or manage via GitHub UI.
 - Set up milestones that mirror project roadmap phases.
-- Connect repository to a GitHub Project (beta) with fields for status, priority, and owner. Automate card creation via Actions or the Project workflows UI.
+- Connect repository to a GitHub Project with fields for status, priority, and owner. Automate card creation via Actions or the Project workflows UI.
 
 ## 4. Workflow Integrations
 
