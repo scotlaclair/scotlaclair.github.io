@@ -1,0 +1,168 @@
+name: Update Parent Issue Checklist
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  issues: write
+  pull-requests: read
+  contents: read
+
+jobs:
+  update-checklist:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    
+    steps:
+      - name: Update parent issue checklist
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const prTitle = context.payload.pull_request.title;
+            const prBody = context.payload.pull_request.body || '';
+            
+            console.log(`Processing merged PR #${prNumber}: ${prTitle}`);
+            
+            // Extract linked issues from PR body
+            // Supports: Closes #123, Fixes #456, Resolves #789, Relates to #101
+            const issueReferences = [];
+            const patterns = [
+              /Closes\s+#(\d+)/gi,
+              /Closed\s+#(\d+)/gi,
+              /Close\s+#(\d+)/gi,
+              /Fixes\s+#(\d+)/gi,
+              /Fixed\s+#(\d+)/gi,
+              /Fix\s+#(\d+)/gi,
+              /Resolves\s+#(\d+)/gi,
+              /Resolved\s+#(\d+)/gi,
+              /Resolve\s+#(\d+)/gi,
+              /(?:Relates?\s+to|Part\s+of)\s+#(\d+)/gi
+            ];
+            
+            for (const pattern of patterns) {
+              let match;
+              while ((match = pattern.exec(prBody)) !== null) {
+                issueReferences.push(parseInt(match[1]));
+              }
+            }
+            
+            // Remove duplicates
+            const uniqueIssues = [...new Set(issueReferences)];
+            console.log(`Found linked issues: ${uniqueIssues.join(', ')}`);
+            
+            if (uniqueIssues.length === 0) {
+              console.log('No linked issues found in PR body');
+              return;
+            }
+            
+            // Process each linked issue
+            for (const issueNumber of uniqueIssues) {
+              try {
+                console.log(`Processing issue #${issueNumber}`);
+                
+                // Get the issue
+                const { data: issue } = await github.rest.issues.get({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issueNumber
+                });
+                
+                let issueBody = issue.body || '';
+                
+                // Check if this is a parent issue with checklist items
+                if (!issueBody.includes('- [ ]') && !issueBody.includes('- [x]')) {
+                  console.log(`Issue #${issueNumber} has no checklist items`);
+                  continue;
+                }
+                
+                // Try to find a checklist item that matches the PR
+                // Look for patterns like:
+                // - [ ] Something related to PR title
+                // - [ ] #123
+                // - [ ] Task that includes PR number
+                
+                let updated = false;
+                const lines = issueBody.split('\n');
+                const updatedLines = lines.map(line => {
+                  // Check if line is an unchecked checklist item
+                  if (line.trim().startsWith('- [ ]')) {
+                    const checklistText = line.toLowerCase();
+                    const prTitleLower = prTitle.toLowerCase();
+                    
+                    // Try to match by PR number reference
+                    if (checklistText.includes(`#${prNumber}`)) {
+                      updated = true;
+                      return line.replace('- [ ]', '- [x]');
+                    }
+                    
+                    // Try to match by significant keywords from PR title
+                    // Extract meaningful words (skip common words)
+                    const skipWords = ['the', 'a', 'an', 'and', 'or', 'but', 'for', 'to', 'in', 'on', 'at', 'from', 'by', 'with', 'of'];
+                    const prWords = prTitleLower
+                      .replace(/[^\w\s]/g, ' ')
+                      .split(/\s+/)
+                      .filter(w => w.length > 3 && !skipWords.includes(w));
+                    
+                    // Check if checklist item contains several words from PR title
+                    let matchCount = 0;
+                    for (const word of prWords) {
+                      if (checklistText.includes(word)) {
+                        matchCount++;
+                      }
+                    }
+                    
+                    // If at least 2 significant words match, consider it a match
+                    if (matchCount >= 2 && prWords.length >= 2) {
+                      updated = true;
+                      return line.replace('- [ ]', '- [x]');
+                    }
+                  }
+                  return line;
+                });
+                
+                if (updated) {
+                  const newBody = updatedLines.join('\n');
+                  
+                  // Update the issue
+                  await github.rest.issues.update({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issueNumber,
+                    body: newBody
+                  });
+                  
+                  console.log(`✓ Updated checklist in issue #${issueNumber}`);
+                  
+                  // Add a comment to the issue
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issueNumber,
+                    body: `✅ Checklist item completed via PR #${prNumber}`
+                  });
+                } else {
+                  console.log(`No matching checklist items found in issue #${issueNumber} for PR #${prNumber}`);
+                  
+                  // Add a comment noting the PR was merged but checklist wasn't auto-updated
+                  const manualUpdateMsg = [
+                    `🔗 PR #${prNumber} has been merged and is related to this issue.`,
+                    '',
+                    '**Note:** No checklist items were automatically updated. If this PR completes a task in the checklist above, please manually check it off.',
+                    '',
+                    '**Manual Checklist Update:**',
+                    'To check off a task manually, edit the issue description and change `- [ ]` to `- [x]` for the completed item.'
+                  ].join('\n');
+                  
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issueNumber,
+                    body: manualUpdateMsg
+                  });
+                }
+              } catch (error) {
+                console.error(`Error processing issue #${issueNumber}:`, error.message);
+              }
+            }
