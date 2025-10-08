@@ -68,7 +68,9 @@ scotlaclair.github.io/
 - ✅ `robots.txt` - Template to control search engine indexing (ready to use)
 - ✅ `sitemap.xml` - Template to help search engines find your pages (update with your pages)
 
-**Using the Templates:**
+**📖 Detailed Guide:** See [Optional Additions Guide](.github/OPTIONAL_ADDITIONS_GUIDE.md) for complete setup instructions.
+
+**Quick Start:**
 - `404.html` - Already active, will show for broken links
 - `robots.txt` - Allows all search engines by default, customize if needed
 - `sitemap.xml` - Add your pages and update dates, then reference in `robots.txt`
