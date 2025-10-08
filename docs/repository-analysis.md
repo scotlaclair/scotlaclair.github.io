@@ -1,7 +1,7 @@
 # Repository Analysis and Code Review
 
 ## 1. Issue and Project Landscape
-- **Open Spark follow-up:** The exported [Issue #9](../issues/9) outlines 9 actionable tasks to solidify the Spark workflow, including template creation, automation, documentation, and consistent comment formatting for workflow scripts.
+- **Open Spark follow-up:** The exported [Issue #9](../issues/9) outlines 6 actionable tasks to solidify the Spark workflow, including template creation, automation, documentation, and consistent comment formatting for workflow scripts.
 - **Automation audit gap:** The issue highlights that merged pull requests are not automatically checking off parent issue checklists, signaling missing workflow automation for closing tasks and demanding verification of checklist state changes when PRs merge. (See [Issue #9](../issues/9))
 - **Documentation expectations:** [Issue #9](../issues/9) requests troubleshooting coverage for automation failures, reinforcing the need for clear manual fallback steps in contributor docs.
 
