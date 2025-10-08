@@ -1,0 +1,79 @@
+# CNAME Configuration Template
+# ==========================================
+# This file is used to configure a custom domain for your GitHub Pages site
+# 
+# Instructions:
+# 1. Rename this file from "CNAME.example" to "CNAME" (no file extension)
+# 2. Replace "example.com" below with your actual domain name
+# 3. Configure DNS records with your domain provider
+# 4. Commit and push the CNAME file to your repository
+# 
+# ==========================================
+
+# Replace with your custom domain (one domain per line)
+# Examples:
+#   www.yourdomain.com
+#   yourdomain.com
+#   subdomain.yourdomain.com
+
+example.com
+
+# ==========================================
+# DNS Configuration Steps:
+# ==========================================
+# 
+# For Apex Domain (example.com):
+# --------------------------------
+# Add these A records to your DNS:
+#   185.199.108.153
+#   185.199.109.153
+#   185.199.110.153
+#   185.199.111.153
+# 
+# For WWW Subdomain (www.example.com):
+# ------------------------------------
+# Add a CNAME record:
+#   CNAME: www.example.com → scotlaclair.github.io
+# 
+# For Other Subdomains (subdomain.example.com):
+# ---------------------------------------------
+# Add a CNAME record:
+#   CNAME: subdomain.example.com → scotlaclair.github.io
+# 
+# ==========================================
+# Verification:
+# ==========================================
+# 
+# 1. After setting up DNS records, wait for propagation (can take 24-48 hours)
+# 2. Check DNS propagation: https://dnschecker.org/
+# 3. In GitHub repository settings, verify custom domain configuration:
+#    Settings → Pages → Custom domain
+# 4. Enable "Enforce HTTPS" once domain is verified
+# 
+# ==========================================
+# Common Issues:
+# ==========================================
+# 
+# - "Domain's DNS record could not be retrieved"
+#   → Wait for DNS propagation or check DNS configuration
+# 
+# - "CNAME already taken"
+#   → This domain is already used by another GitHub Pages site
+# 
+# - Certificate errors
+#   → Wait for GitHub to provision SSL certificate (up to 24 hours)
+# 
+# ==========================================
+# Additional Resources:
+# ==========================================
+# 
+# - GitHub Pages Custom Domain Guide:
+#   https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
+# 
+# - Managing a custom domain:
+#   https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
+# 
+# - Troubleshooting custom domains:
+#   https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/troubleshooting-custom-domains-and-github-pages
+# 
+# ==========================================
