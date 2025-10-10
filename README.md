@@ -11,6 +11,8 @@ Repo for Pages and Documents, new sparks
 - 💡 **Submit a Spark**: [New Idea](../../issues/new?template=spark.yml)
 - 🐛 **Report a Bug**: [Bug Report](../../issues/new?template=bug.yml)
 - 📝 **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md)
+- 🧩 **Template Setup**: See [.github/TEMPLATE_REPO_GUIDE.md](.github/TEMPLATE_REPO_GUIDE.md)
+- 🤖 **AI Assistant Setup**: See [docs/ai-dev-environment-setup.md](docs/ai-dev-environment-setup.md)
 - ⚙️ **Setup Guide**: See [.github/SETUP_GUIDE.md](.github/SETUP_GUIDE.md)
 - 🔗 **PR Linking Guide**: See [.github/PR_ISSUE_LINKING_REFERENCE.md](.github/PR_ISSUE_LINKING_REFERENCE.md)
 
