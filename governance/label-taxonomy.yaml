@@ -1,0 +1,16 @@
+# Label taxonomy
+CoreFlow:
+  - triage
+  - in-progress
+  - ready-for-review
+  - ready-to-merge
+  - deployed
+QualityGovernance:
+  - security-critical
+  - policy-blocked
+  - test-failed
+  - codeql-high
+AgentContribution:
+  - ai-generated
+  - refactor-major
+  - gemini-reviewed
