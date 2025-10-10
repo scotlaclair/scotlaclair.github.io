@@ -1,0 +1,36 @@
+pipeline:
+  states:
+    - state:init
+    - state:foundation
+    - state:workflows
+    - state:ai-gates
+    - state:pm
+    - state:done
+  labels:
+    foundation: "needs:foundation"
+    workflows: "needs:workflows"
+    ai_gates: "needs:ai-gates"
+    pm: "needs:pm"
+  rules:
+    require_draft_pr_for_agents: true
+    required_checks:
+      - ci
+      - codeql
+      - security
+      - tests
+      - sonarcloud   # optional
+      - pr-agent     # optional
+  issueops:
+    commands:
+      - "/bootstrap"
+      - "/harden"
+      - "/enable-agents"
+      - "/plan"
+      - "/deploy env=<staging|prod>"
+shared_artifacts:
+  - /.ai/contract.yaml
+  - /governance/label-taxonomy.yaml
+  - /governance/ruleset-config.yaml
+  - /governance/project-schema.json
+handoff:
+  contract: "Orchestrator opens a Pipeline Run issue with checklist and applies next state label. Each specialist posts a Changeset Plan, clears its label, and sets next state."
