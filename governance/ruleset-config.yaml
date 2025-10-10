@@ -1,0 +1,16 @@
+# Rulesets & Branch Protection
+required_status_checks:
+  - ci
+  - codeql
+  - security
+  - tests
+  # - sonarcloud  # [optional]
+branch_policies:
+  default:
+    linear_history: true
+    signed_commits: true
+    required_reviewers: 1
+    block_on_labels: [security-critical, codeql-high]
+agent_branches:
+  pattern: 'agents/*'
+  require_draft_pr: true
