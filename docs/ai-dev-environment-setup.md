@@ -79,6 +79,15 @@ Create a checklist issue template for new contributors including:
 - Encourage contributors to log AI feedback in a dedicated GitHub Discussion or Project view.
 - Iterate on templates and workflows as best practices evolve.
 
+## 9. Tool-Specific Quick Starts
+
+- **GitHub Copilot Chat** – Follow the instructions in `.github/copilot/chat/agent/path/AGENTS.md`
+  when configuring agents or sharing prompt libraries.
+- **Google Gemini CLI** – Use `.gemini/Gemini.md` alongside `.gemini/config.yaml` for installation
+  and command examples tailored to this template.
+- **OpenAI Codex** – Reference `.codex/Codex.md` and `.codex/AGENTS.md` for CLI setup, prompt
+  recipes, and governance reminders.
+
 ---
 
 With this foundation in place, you can create new repositories from the template and immediately benefit from consistent automation, governance, and AI-assisted development workflows.
