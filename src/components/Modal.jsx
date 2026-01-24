@@ -8,15 +8,6 @@ const Modal = ({ project, isOpen, onClose }) => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
       
-      // Handle Escape key
-      const handleEscape = (e) => {
-        if (e.key === 'Escape') {
-          onClose();
-        }
-      };
-      
-      document.addEventListener('keydown', handleEscape);
-      
       // Focus trap
       const focusableElements = modalRef.current?.querySelectorAll(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
@@ -24,28 +15,35 @@ const Modal = ({ project, isOpen, onClose }) => {
       const firstElement = focusableElements?.[0];
       const lastElement = focusableElements?.[focusableElements.length - 1];
       
-      const handleTab = (e) => {
-        if (e.key !== 'Tab') return;
+      // Combined keyboard handler for both Escape and Tab
+      const handleKeyboard = (e) => {
+        // Handle Escape key
+        if (e.key === 'Escape') {
+          onClose();
+          return;
+        }
         
-        if (e.shiftKey) {
-          if (document.activeElement === firstElement) {
-            e.preventDefault();
-            lastElement?.focus();
-          }
-        } else {
-          if (document.activeElement === lastElement) {
-            e.preventDefault();
-            firstElement?.focus();
+        // Handle Tab for focus trap
+        if (e.key === 'Tab') {
+          if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+              e.preventDefault();
+              lastElement?.focus();
+            }
+          } else {
+            if (document.activeElement === lastElement) {
+              e.preventDefault();
+              firstElement?.focus();
+            }
           }
         }
       };
       
-      document.addEventListener('keydown', handleTab);
+      document.addEventListener('keydown', handleKeyboard);
       firstElement?.focus();
       
       return () => {
-        document.removeEventListener('keydown', handleEscape);
-        document.removeEventListener('keydown', handleTab);
+        document.removeEventListener('keydown', handleKeyboard);
       };
     } else {
       document.body.style.overflow = 'unset';

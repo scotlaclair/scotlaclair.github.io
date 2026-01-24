@@ -100,6 +100,7 @@ const Navigation = () => {
               <a
                 href="/docs/"
                 className="text-slate-300 hover:text-cyan-400 transition-colors duration-200 text-left px-4 block"
+                aria-label="Navigate to documentation"
               >
                 Docs
               </a>
