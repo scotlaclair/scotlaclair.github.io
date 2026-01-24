@@ -231,7 +231,7 @@ function App() {
     }
   ];
 
-  const categories = ['All', 'AI Architecture', 'Enterprise', 'Governance', 'Strategy'];
+  const categories = ['All', 'AI Architecture', 'Enterprise', 'Governance', 'Methodology', 'Strategy'];
 
   const filteredProjects = activeCategory === 'All' 
     ? projects 
@@ -301,6 +301,7 @@ function App() {
                     ? 'bg-cyan-500 text-white glow-cyan'
                     : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
                 }`}
+                aria-pressed={activeCategory === category}
               >
                 {category}
               </button>
@@ -337,9 +338,12 @@ function App() {
             from conception to continuous optimization.
           </p>
           
-          <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 rounded-lg font-semibold transition-all duration-300 glow-cyan">
+          <a
+            href="/docs/"
+            className="inline-block px-8 py-3 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 rounded-lg font-semibold transition-all duration-300 glow-cyan"
+          >
             Explore the Methodology →
-          </button>
+          </a>
         </div>
       </section>
 
@@ -361,7 +365,7 @@ function App() {
             </div>
             
             <div className="text-center md:text-right text-slate-500 text-sm">
-              <p>&copy; 2024 Scot LaClair</p>
+              <p>&copy; {new Date().getFullYear()} Scot LaClair</p>
               <p className="font-mono">Enterprise Ready</p>
             </div>
           </div>

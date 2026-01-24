@@ -1,10 +1,52 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { X, ExternalLink } from 'lucide-react';
 
 const Modal = ({ project, isOpen, onClose }) => {
+  const modalRef = useRef(null);
+  
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      
+      // Handle Escape key
+      const handleEscape = (e) => {
+        if (e.key === 'Escape') {
+          onClose();
+        }
+      };
+      
+      document.addEventListener('keydown', handleEscape);
+      
+      // Focus trap
+      const focusableElements = modalRef.current?.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      const firstElement = focusableElements?.[0];
+      const lastElement = focusableElements?.[focusableElements.length - 1];
+      
+      const handleTab = (e) => {
+        if (e.key !== 'Tab') return;
+        
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement?.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement?.focus();
+          }
+        }
+      };
+      
+      document.addEventListener('keydown', handleTab);
+      firstElement?.focus();
+      
+      return () => {
+        document.removeEventListener('keydown', handleEscape);
+        document.removeEventListener('keydown', handleTab);
+      };
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -12,7 +54,7 @@ const Modal = ({ project, isOpen, onClose }) => {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   if (!isOpen || !project) return null;
 
@@ -29,7 +71,7 @@ const Modal = ({ project, isOpen, onClose }) => {
       
       {/* Modal Content */}
       <div className="relative min-h-screen flex items-center justify-center p-4">
-        <div className="relative bg-slate-900 rounded-xl border border-cyan-400/30 max-w-3xl w-full p-8 glow-cyan animate-scaleIn">
+        <div ref={modalRef} className="relative bg-slate-900 rounded-xl border border-cyan-400/30 max-w-3xl w-full p-8 glow-cyan animate-scaleIn">
           {/* Close Button */}
           <button
             onClick={onClose}
@@ -88,14 +130,19 @@ const Modal = ({ project, isOpen, onClose }) => {
             </div>
           )}
 
-          {/* CTA Button */}
-          <button 
-            className="w-full py-3 px-6 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-all duration-300 glow-cyan"
-            aria-label={`View source artifacts for ${project.title}`}
-          >
-            <span>View Source Artifacts</span>
-            <ExternalLink className="w-4 h-4" />
-          </button>
+          {/* CTA Button - Disabled as source URLs not yet available */}
+          <div className="relative">
+            <button 
+              className="w-full py-3 px-6 bg-slate-700 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-all duration-300 cursor-not-allowed opacity-50"
+              aria-label={`View source artifacts for ${project.title}`}
+              disabled
+              title="Source artifacts coming soon"
+            >
+              <span>View Source Artifacts</span>
+              <ExternalLink className="w-4 h-4" />
+            </button>
+            <p className="text-xs text-slate-500 text-center mt-2">Coming soon</p>
+          </div>
         </div>
       </div>
     </div>
