@@ -22,24 +22,28 @@ const Navigation = () => {
             <button
               onClick={() => scrollToSection('hero')}
               className="text-slate-300 hover:text-cyan-400 transition-colors duration-200"
+              aria-label="Navigate to profile section"
             >
               Profile
             </button>
             <button
               onClick={() => scrollToSection('projects')}
               className="text-slate-300 hover:text-cyan-400 transition-colors duration-200"
+              aria-label="Navigate to projects section"
             >
               Projects
             </button>
             <button
               onClick={() => scrollToSection('methodology')}
               className="text-slate-300 hover:text-cyan-400 transition-colors duration-200"
+              aria-label="Navigate to methodology section"
             >
               Methodology
             </button>
             <button
               onClick={() => scrollToSection('contact')}
               className="text-slate-300 hover:text-cyan-400 transition-colors duration-200"
+              aria-label="Navigate to contact section"
             >
               Contact
             </button>

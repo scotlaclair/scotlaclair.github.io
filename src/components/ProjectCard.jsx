@@ -4,9 +4,10 @@ const ProjectCard = ({ project, onClick }) => {
   const Icon = project.icon;
   
   return (
-    <div
+    <button
       onClick={onClick}
-      className="group relative bg-slate-900 rounded-lg border border-slate-800 p-6 cursor-pointer transition-all duration-300 hover:border-cyan-400 glow-cyan-hover overflow-hidden"
+      className="group relative bg-slate-900 rounded-lg border border-slate-800 p-6 cursor-pointer transition-all duration-300 hover:border-cyan-400 glow-cyan-hover overflow-hidden w-full text-left"
+      aria-label={`View details for ${project.title} - ${project.subtitle}`}
     >
       {/* Background gradient on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -44,7 +45,7 @@ const ProjectCard = ({ project, onClick }) => {
           <span className="font-mono text-slate-500">{project.stats.stack}</span>
         </div>
       </div>
-    </div>
+    </button>
   );
 };
 

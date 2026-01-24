@@ -19,11 +19,12 @@ const Modal = ({ project, isOpen, onClose }) => {
   const Icon = project.icon;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto animate-fadeIn">
+    <div className="fixed inset-0 z-50 overflow-y-auto animate-fadeIn" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       {/* Backdrop */}
       <div 
         className="fixed inset-0 bg-black/80 backdrop-blur-sm"
         onClick={onClose}
+        aria-hidden="true"
       />
       
       {/* Modal Content */}
@@ -45,7 +46,7 @@ const Modal = ({ project, isOpen, onClose }) => {
             </div>
             <div className="flex-1">
               <div className="flex items-center space-x-3 mb-2">
-                <h2 className="text-3xl font-bold text-white">{project.title}</h2>
+                <h2 id="modal-title" className="text-3xl font-bold text-white">{project.title}</h2>
                 <span className="px-3 py-1 text-xs font-medium bg-cyan-500/10 text-cyan-400 rounded-full border border-cyan-500/20">
                   {project.category}
                 </span>
@@ -88,7 +89,10 @@ const Modal = ({ project, isOpen, onClose }) => {
           )}
 
           {/* CTA Button */}
-          <button className="w-full py-3 px-6 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-all duration-300 glow-cyan">
+          <button 
+            className="w-full py-3 px-6 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-all duration-300 glow-cyan"
+            aria-label={`View source artifacts for ${project.title}`}
+          >
             <span>View Source Artifacts</span>
             <ExternalLink className="w-4 h-4" />
           </button>
