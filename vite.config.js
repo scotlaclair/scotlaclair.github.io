@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { copyFileSync, mkdirSync, existsSync } from 'fs'
+import { copyFileSync, mkdirSync, existsSync, readdirSync } from 'fs'
 import { join } from 'path'
 
 // https://vitejs.dev/config/
@@ -10,20 +10,25 @@ export default defineConfig({
     {
       name: 'copy-static-files',
       closeBundle() {
-        // Copy docs directory
+        // Copy docs directory - dynamically include all files
         const srcDocs = 'docs'
         const destDocs = 'dist/docs'
         if (!existsSync(destDocs)) {
           mkdirSync(destDocs, { recursive: true })
         }
-        const docsFiles = ['index.html', 'example.html', 'somas-architecture.html', 'ai-dev-environment-setup.md', 'repository-analysis.md']
-        docsFiles.forEach(file => {
-          const srcFile = join(srcDocs, file)
-          const destFile = join(destDocs, file)
-          if (existsSync(srcFile)) {
-            copyFileSync(srcFile, destFile)
-          }
-        })
+        if (existsSync(srcDocs)) {
+          const docsFiles = readdirSync(srcDocs)
+          docsFiles.forEach(file => {
+            const srcFile = join(srcDocs, file)
+            const destFile = join(destDocs, file)
+            try {
+              copyFileSync(srcFile, destFile)
+            } catch (error) {
+              // Skip directories or inaccessible files
+              console.warn(`Could not copy ${srcFile}:`, error.message)
+            }
+          })
+        }
 
         // Copy assets/css directory
         const srcCss = 'assets/css'
@@ -31,11 +36,17 @@ export default defineConfig({
         if (!existsSync(destCss)) {
           mkdirSync(destCss, { recursive: true })
         }
-        const cssFile = 'style.css'
-        const srcCssFile = join(srcCss, cssFile)
-        const destCssFile = join(destCss, cssFile)
-        if (existsSync(srcCssFile)) {
-          copyFileSync(srcCssFile, destCssFile)
+        if (existsSync(srcCss)) {
+          const cssFiles = readdirSync(srcCss)
+          cssFiles.forEach(file => {
+            const srcFile = join(srcCss, file)
+            const destFile = join(destCss, file)
+            try {
+              copyFileSync(srcFile, destFile)
+            } catch (error) {
+              console.warn(`Could not copy ${srcFile}:`, error.message)
+            }
+          })
         }
 
         // Copy other static files
