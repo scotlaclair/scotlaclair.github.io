@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { copyFileSync, mkdirSync, existsSync, readdirSync } from 'fs'
+import { copyFileSync, mkdirSync, existsSync, readdirSync, statSync } from 'fs'
 import { join } from 'path'
 
 // https://vitejs.dev/config/
@@ -22,9 +22,11 @@ export default defineConfig({
             const srcFile = join(srcDocs, file)
             const destFile = join(destDocs, file)
             try {
-              copyFileSync(srcFile, destFile)
+              // Only copy files, not directories
+              if (statSync(srcFile).isFile()) {
+                copyFileSync(srcFile, destFile)
+              }
             } catch (error) {
-              // Skip directories or inaccessible files
               console.warn(`Could not copy ${srcFile}:`, error.message)
             }
           })
@@ -42,7 +44,10 @@ export default defineConfig({
             const srcFile = join(srcCss, file)
             const destFile = join(destCss, file)
             try {
-              copyFileSync(srcFile, destFile)
+              // Only copy files, not directories
+              if (statSync(srcFile).isFile()) {
+                copyFileSync(srcFile, destFile)
+              }
             } catch (error) {
               console.warn(`Could not copy ${srcFile}:`, error.message)
             }
