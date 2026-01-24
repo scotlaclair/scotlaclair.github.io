@@ -40,6 +40,13 @@ const Navigation = () => {
             >
               Methodology
             </button>
+            <a
+              href="/docs/"
+              className="text-slate-300 hover:text-cyan-400 transition-colors duration-200"
+              aria-label="Navigate to documentation"
+            >
+              Docs
+            </a>
             <button
               onClick={() => scrollToSection('contact')}
               className="text-slate-300 hover:text-cyan-400 transition-colors duration-200"
